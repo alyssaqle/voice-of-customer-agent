@@ -1,0 +1,24 @@
+# slack-signals.txt — SYNTHETIC (internal Slack messages).
+#
+# Real internal chat is proprietary by nature, so this layer is mocked. These
+# are illustrative #sales-signals / #cs-escalations messages for a
+# project-management SaaS. Each is tagged with the CRM account it concerns, so
+# the pipeline can join it to revenue (the anonymous app reviews cannot be).
+#
+# Format:  [account_id] YYYY-MM-DD | message
+# Lines starting with # are ignored by the ingester.
+
+[acc_037] 2025-03-14 | #sales-signals: Atlas Digital's admin says the mobile app crashes on their team's Android fleet daily — they've named it as a blocker on the renewal. This is our largest account.
+[acc_013] 2025-03-12 | #cs-escalations: Cobalt Systems reports the Jira sync silently drops updates. Their PMO won't expand seats until two-way sync is reliable.
+[acc_036] 2025-03-15 | #sales-signals: Cedar Health's IT requires SAML SSO before they'll roll out org-wide; current login flow fails for their SSO users. Renewal-critical.
+[acc_029] 2025-03-10 | #cs-escalations: Summit Health says boards with 500+ tasks are unusably slow on mobile and web. Exec sponsor raised it on the QBR.
+[acc_031] 2025-03-13 | #cs-escalations: Evergreen Retail Group — push notifications for assignments arrive hours late, so their store managers miss tasks.
+[acc_037] 2025-03-08 | #sales-signals: Atlas Digital wants feature parity on mobile — can't reorder or bulk-edit tasks on the phone, which their field teams need.
+[acc_023] 2025-03-11 | #sales-signals: Harbor Digital is pushing back hard on the price increase at renewal; says value isn't there without the mobile fixes.
+[acc_006] 2025-03-09 | #cs-escalations: Atlas Systems needs Google Calendar two-way sync; one-way export isn't enough for their scheduling workflow.
+[acc_013] 2025-03-07 | #cs-escalations: Cobalt Systems again — app froze during a client demo. Second crash report this month from their account.
+[acc_003] 2025-03-06 | #sales-signals: Wavelength Analytics (expansion opp) asked specifically for a stable Jira integration before signing an annual deal.
+[acc_011] 2025-03-05 | #cs-escalations: Harbor Logistics — mobile app crashes when attaching files on Android. Blocking their ops team.
+[acc_029] 2025-03-16 | #sales-signals: Summit Health confirmed SSO is a hard requirement for their security review; blocking the renewal alongside the performance issues.
+[acc_031] 2025-03-04 | #cs-escalations: Evergreen Retail again on slow load times for large boards — their planners are abandoning the mobile app.
+[acc_001] 2025-03-03 | #sales-signals: Beacon Media wants reliable notifications and a Slack integration; current alerts are inconsistent.

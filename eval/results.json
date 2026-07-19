@@ -1,0 +1,267 @@
+{
+  "generated_at": "2026-07-15T08:25:07.829Z",
+  "metric": "top-1 agreement with expert-PM label",
+  "agreement": "13 / 15",
+  "agreement_rate": 0.867,
+  "cases": [
+    {
+      "id": "case-01",
+      "name": "Enterprise Slack outranks a wall of anonymous reviews",
+      "expected_top": "sso-block",
+      "tool_top": "sso-block",
+      "match": true,
+      "ranking": [
+        {
+          "theme_id": "sso-block",
+          "score": 0.785
+        },
+        {
+          "theme_id": "ui-polish",
+          "score": 0.37
+        }
+      ]
+    },
+    {
+      "id": "case-02",
+      "name": "Higher revenue-at-risk wins between two enterprise themes",
+      "expected_top": "jira-sync",
+      "tool_top": "jira-sync",
+      "match": true,
+      "ranking": [
+        {
+          "theme_id": "jira-sync",
+          "score": 0.86
+        },
+        {
+          "theme_id": "calendar",
+          "score": 0.568
+        }
+      ]
+    },
+    {
+      "id": "case-03",
+      "name": "Severity breaks the tie at equal revenue and volume",
+      "expected_top": "crash",
+      "tool_top": "crash",
+      "match": true,
+      "ranking": [
+        {
+          "theme_id": "crash",
+          "score": 0.97
+        },
+        {
+          "theme_id": "cosmetic",
+          "score": 0.82
+        }
+      ]
+    },
+    {
+      "id": "case-04",
+      "name": "Source authority breaks the tie at equal volume + severity",
+      "expected_top": "sales-flag",
+      "tool_top": "sales-flag",
+      "match": true,
+      "ranking": [
+        {
+          "theme_id": "sales-flag",
+          "score": 0.95
+        },
+        {
+          "theme_id": "review-noise",
+          "score": 0.47
+        }
+      ]
+    },
+    {
+      "id": "case-05",
+      "name": "Broad free-tier volume should not beat a real enterprise renewal risk",
+      "expected_top": "renewal-perf",
+      "tool_top": "renewal-perf",
+      "match": true,
+      "ranking": [
+        {
+          "theme_id": "renewal-perf",
+          "score": 0.747
+        },
+        {
+          "theme_id": "free-feature",
+          "score": 0.42
+        }
+      ]
+    },
+    {
+      "id": "case-06",
+      "name": "Multiple enterprise accounts stack revenue-at-risk",
+      "expected_top": "shared-pain",
+      "tool_top": "shared-pain",
+      "match": true,
+      "ranking": [
+        {
+          "theme_id": "shared-pain",
+          "score": 0.86
+        },
+        {
+          "theme_id": "solo-pain",
+          "score": 0.673
+        }
+      ]
+    },
+    {
+      "id": "case-07",
+      "name": "High-severity crash from paying support beats a low-severity enterprise nice-to-have",
+      "expected_top": "data-loss",
+      "tool_top": "data-loss",
+      "match": true,
+      "ranking": [
+        {
+          "theme_id": "data-loss",
+          "score": 0.69
+        },
+        {
+          "theme_id": "nice-to-have",
+          "score": 0.636
+        }
+      ]
+    },
+    {
+      "id": "case-08",
+      "name": "Survey feedback from a paying account beats anonymous reviews",
+      "expected_top": "survey-ask",
+      "tool_top": "survey-ask",
+      "match": true,
+      "ranking": [
+        {
+          "theme_id": "survey-ask",
+          "score": 0.807
+        },
+        {
+          "theme_id": "review-ask",
+          "score": 0.42
+        }
+      ]
+    },
+    {
+      "id": "case-09",
+      "name": "Two review-only themes: higher volume wins (no revenue signal to differentiate)",
+      "expected_top": "big-review",
+      "tool_top": "big-review",
+      "match": true,
+      "ranking": [
+        {
+          "theme_id": "big-review",
+          "score": 0.42
+        },
+        {
+          "theme_id": "small-review",
+          "score": 0.324
+        }
+      ]
+    },
+    {
+      "id": "case-10",
+      "name": "Enterprise revenue beats moderately higher volume from growth-tier",
+      "expected_top": "ent-block",
+      "tool_top": "ent-block",
+      "match": true,
+      "ranking": [
+        {
+          "theme_id": "ent-block",
+          "score": 0.806
+        },
+        {
+          "theme_id": "growth-ask",
+          "score": 0.608
+        }
+      ]
+    },
+    {
+      "id": "case-11",
+      "name": "Sales-call renewal risk outranks a big anonymous review pile",
+      "expected_top": "renewal",
+      "tool_top": "renewal",
+      "match": true,
+      "ranking": [
+        {
+          "theme_id": "renewal",
+          "score": 0.84
+        },
+        {
+          "theme_id": "reviews",
+          "score": 0.42
+        }
+      ]
+    },
+    {
+      "id": "case-12",
+      "name": "ADVERSARIAL: widespread login bug vs a whale's cosmetic ask",
+      "expected_top": "login-bug",
+      "tool_top": "whale-cosmetic",
+      "match": false,
+      "ranking": [
+        {
+          "theme_id": "whale-cosmetic",
+          "score": 0.616
+        },
+        {
+          "theme_id": "login-bug",
+          "score": 0.47
+        }
+      ]
+    },
+    {
+      "id": "case-13",
+      "name": "Severe crash across several enterprise accounts is the clear top priority",
+      "expected_top": "crash",
+      "tool_top": "crash",
+      "match": true,
+      "ranking": [
+        {
+          "theme_id": "crash",
+          "score": 0.841
+        },
+        {
+          "theme_id": "feature",
+          "score": 0.42
+        }
+      ]
+    },
+    {
+      "id": "case-14",
+      "name": "ADVERSARIAL: severe data corruption (small accounts) vs enterprise integration ask",
+      "expected_top": "data-corruption",
+      "tool_top": "ent-integration",
+      "match": false,
+      "ranking": [
+        {
+          "theme_id": "ent-integration",
+          "score": 0.765
+        },
+        {
+          "theme_id": "data-corruption",
+          "score": 0.611
+        }
+      ]
+    },
+    {
+      "id": "case-15",
+      "name": "Highest-revenue theme wins a three-way race",
+      "expected_top": "theme-x",
+      "tool_top": "theme-x",
+      "match": true,
+      "ranking": [
+        {
+          "theme_id": "theme-x",
+          "score": 0.768
+        },
+        {
+          "theme_id": "theme-y",
+          "score": 0.592
+        },
+        {
+          "theme_id": "theme-z",
+          "score": 0.47
+        }
+      ]
+    }
+  ]
+}

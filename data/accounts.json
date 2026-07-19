@@ -1,0 +1,242 @@
+[
+  {
+    "account_id": "acc_001",
+    "name": "Beacon Media",
+    "annual_revenue": 260000,
+    "tier": "enterprise"
+  },
+  {
+    "account_id": "acc_002",
+    "name": "Onyx Media",
+    "annual_revenue": 123000,
+    "tier": "growth"
+  },
+  {
+    "account_id": "acc_003",
+    "name": "Wavelength Analytics",
+    "annual_revenue": 225000,
+    "tier": "growth"
+  },
+  {
+    "account_id": "acc_004",
+    "name": "Wavelength Financial",
+    "annual_revenue": 0,
+    "tier": "free"
+  },
+  {
+    "account_id": "acc_005",
+    "name": "Granite Health",
+    "annual_revenue": 90000,
+    "tier": "growth"
+  },
+  {
+    "account_id": "acc_006",
+    "name": "Atlas Systems",
+    "annual_revenue": 317000,
+    "tier": "enterprise"
+  },
+  {
+    "account_id": "acc_007",
+    "name": "Keystone Robotics",
+    "annual_revenue": 0,
+    "tier": "free"
+  },
+  {
+    "account_id": "acc_008",
+    "name": "Evergreen Financial",
+    "annual_revenue": 0,
+    "tier": "free"
+  },
+  {
+    "account_id": "acc_009",
+    "name": "Tideline Systems",
+    "annual_revenue": 95000,
+    "tier": "growth"
+  },
+  {
+    "account_id": "acc_010",
+    "name": "Northwind Robotics",
+    "annual_revenue": 196000,
+    "tier": "growth"
+  },
+  {
+    "account_id": "acc_011",
+    "name": "Harbor Logistics",
+    "annual_revenue": 227000,
+    "tier": "growth"
+  },
+  {
+    "account_id": "acc_012",
+    "name": "Ironclad Digital",
+    "annual_revenue": 0,
+    "tier": "free"
+  },
+  {
+    "account_id": "acc_013",
+    "name": "Cobalt Systems",
+    "annual_revenue": 1334000,
+    "tier": "enterprise"
+  },
+  {
+    "account_id": "acc_014",
+    "name": "Evergreen Labs",
+    "annual_revenue": 194000,
+    "tier": "growth"
+  },
+  {
+    "account_id": "acc_015",
+    "name": "Northwind Analytics",
+    "annual_revenue": 0,
+    "tier": "free"
+  },
+  {
+    "account_id": "acc_016",
+    "name": "Kestrel Retail Group",
+    "annual_revenue": 0,
+    "tier": "free"
+  },
+  {
+    "account_id": "acc_017",
+    "name": "Halcyon Logistics",
+    "annual_revenue": 147000,
+    "tier": "growth"
+  },
+  {
+    "account_id": "acc_018",
+    "name": "Solstice Analytics",
+    "annual_revenue": 0,
+    "tier": "free"
+  },
+  {
+    "account_id": "acc_019",
+    "name": "Atlas Logistics",
+    "annual_revenue": 0,
+    "tier": "free"
+  },
+  {
+    "account_id": "acc_020",
+    "name": "Halcyon Financial",
+    "annual_revenue": 91000,
+    "tier": "growth"
+  },
+  {
+    "account_id": "acc_021",
+    "name": "Vertex Logistics",
+    "annual_revenue": 0,
+    "tier": "free"
+  },
+  {
+    "account_id": "acc_022",
+    "name": "Cedar Robotics",
+    "annual_revenue": 189000,
+    "tier": "growth"
+  },
+  {
+    "account_id": "acc_023",
+    "name": "Harbor Digital",
+    "annual_revenue": 309000,
+    "tier": "enterprise"
+  },
+  {
+    "account_id": "acc_024",
+    "name": "Cobalt Health",
+    "annual_revenue": 80000,
+    "tier": "growth"
+  },
+  {
+    "account_id": "acc_025",
+    "name": "Harbor Systems",
+    "annual_revenue": 0,
+    "tier": "free"
+  },
+  {
+    "account_id": "acc_026",
+    "name": "Ironclad Robotics",
+    "annual_revenue": 150000,
+    "tier": "growth"
+  },
+  {
+    "account_id": "acc_027",
+    "name": "Kestrel Labs",
+    "annual_revenue": 0,
+    "tier": "free"
+  },
+  {
+    "account_id": "acc_028",
+    "name": "Beacon Financial",
+    "annual_revenue": 60000,
+    "tier": "growth"
+  },
+  {
+    "account_id": "acc_029",
+    "name": "Summit Health",
+    "annual_revenue": 1064000,
+    "tier": "enterprise"
+  },
+  {
+    "account_id": "acc_030",
+    "name": "Harbor Health",
+    "annual_revenue": 0,
+    "tier": "free"
+  },
+  {
+    "account_id": "acc_031",
+    "name": "Evergreen Retail Group",
+    "annual_revenue": 622000,
+    "tier": "enterprise"
+  },
+  {
+    "account_id": "acc_032",
+    "name": "Kestrel Media",
+    "annual_revenue": 0,
+    "tier": "free"
+  },
+  {
+    "account_id": "acc_033",
+    "name": "Lumen Labs",
+    "annual_revenue": 226000,
+    "tier": "growth"
+  },
+  {
+    "account_id": "acc_034",
+    "name": "Atlas Robotics",
+    "annual_revenue": 0,
+    "tier": "free"
+  },
+  {
+    "account_id": "acc_035",
+    "name": "Beacon Health",
+    "annual_revenue": 47000,
+    "tier": "growth"
+  },
+  {
+    "account_id": "acc_036",
+    "name": "Cedar Health",
+    "annual_revenue": 1505000,
+    "tier": "enterprise"
+  },
+  {
+    "account_id": "acc_037",
+    "name": "Atlas Digital",
+    "annual_revenue": 1738000,
+    "tier": "enterprise"
+  },
+  {
+    "account_id": "acc_038",
+    "name": "Beacon Analytics",
+    "annual_revenue": 0,
+    "tier": "free"
+  },
+  {
+    "account_id": "acc_039",
+    "name": "Ridgeline Retail Group",
+    "annual_revenue": 193000,
+    "tier": "growth"
+  },
+  {
+    "account_id": "acc_040",
+    "name": "Solstice Robotics",
+    "annual_revenue": 0,
+    "tier": "free"
+  }
+]

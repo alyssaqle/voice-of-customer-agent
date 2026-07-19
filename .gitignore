@@ -1,0 +1,11 @@
+node_modules/
+.env
+*.local
+
+# Audit logs are large + regenerated each run. Keep one sample run committed by force-adding it.
+runs/*
+!runs/.gitkeep
+!runs/sample/**
+
+dist/
+.DS_Store

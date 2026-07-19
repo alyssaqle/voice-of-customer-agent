@@ -1,0 +1,183 @@
+[
+  {
+    "id": "case-01",
+    "name": "Enterprise Slack outranks a wall of anonymous reviews",
+    "note": "The core thesis: 40 anonymous review complaints should NOT beat a deal-blocking enterprise signal.",
+    "accounts": [{ "account_id": "big", "annual_revenue": 1500000, "tier": "enterprise" }],
+    "themes": [
+      { "theme_id": "ui-polish", "title": "UI feels clunky", "severity": 2, "signals_spec": { "count": 40, "source": "app_review", "account": null } },
+      { "theme_id": "sso-block", "title": "SSO blocks enterprise rollout", "severity": 5, "signals_spec": { "count": 3, "source": "slack", "account": "big" } }
+    ],
+    "expected_top": "sso-block"
+  },
+  {
+    "id": "case-02",
+    "name": "Higher revenue-at-risk wins between two enterprise themes",
+    "accounts": [
+      { "account_id": "huge", "annual_revenue": 1800000, "tier": "enterprise" },
+      { "account_id": "mid", "annual_revenue": 300000, "tier": "enterprise" }
+    ],
+    "themes": [
+      { "theme_id": "jira-sync", "title": "Jira two-way sync", "severity": 4, "signals_spec": { "count": 4, "source": "slack", "account": "huge" } },
+      { "theme_id": "calendar", "title": "Calendar sync", "severity": 4, "signals_spec": { "count": 4, "source": "slack", "account": "mid" } }
+    ],
+    "expected_top": "jira-sync"
+  },
+  {
+    "id": "case-03",
+    "name": "Severity breaks the tie at equal revenue and volume",
+    "accounts": [{ "account_id": "ent", "annual_revenue": 800000, "tier": "enterprise" }],
+    "themes": [
+      { "theme_id": "crash", "title": "App crashes daily", "severity": 5, "signals_spec": { "count": 5, "source": "support_ticket", "account": "ent" } },
+      { "theme_id": "cosmetic", "title": "Minor color complaints", "severity": 2, "signals_spec": { "count": 5, "source": "support_ticket", "account": "ent" } }
+    ],
+    "expected_top": "crash"
+  },
+  {
+    "id": "case-04",
+    "name": "Source authority breaks the tie at equal volume + severity",
+    "note": "A sales-call note outranks the same number of anonymous reviews.",
+    "accounts": [{ "account_id": "ent", "annual_revenue": 500000, "tier": "enterprise" }],
+    "themes": [
+      { "theme_id": "sales-flag", "title": "AE-flagged blocker", "severity": 4, "signals_spec": { "count": 6, "source": "sales_call", "account": "ent" } },
+      { "theme_id": "review-noise", "title": "Anonymous review complaint", "severity": 4, "signals_spec": { "count": 6, "source": "app_review", "account": null } }
+    ],
+    "expected_top": "sales-flag"
+  },
+  {
+    "id": "case-05",
+    "name": "Broad free-tier volume should not beat a real enterprise renewal risk",
+    "accounts": [{ "account_id": "ent", "annual_revenue": 1200000, "tier": "enterprise" }],
+    "themes": [
+      { "theme_id": "free-feature", "title": "Free users want dark mode", "severity": 3, "signals_spec": { "count": 60, "source": "app_review", "account": null } },
+      { "theme_id": "renewal-perf", "title": "Perf issue blocking renewal", "severity": 4, "signals_spec": { "count": 5, "source": "slack", "account": "ent" } }
+    ],
+    "expected_top": "renewal-perf"
+  },
+  {
+    "id": "case-06",
+    "name": "Multiple enterprise accounts stack revenue-at-risk",
+    "accounts": [
+      { "account_id": "e1", "annual_revenue": 400000, "tier": "enterprise" },
+      { "account_id": "e2", "annual_revenue": 400000, "tier": "enterprise" },
+      { "account_id": "e3", "annual_revenue": 400000, "tier": "enterprise" },
+      { "account_id": "solo", "annual_revenue": 900000, "tier": "enterprise" }
+    ],
+    "themes": [
+      { "theme_id": "shared-pain", "title": "Integration pain across 3 accounts", "severity": 4, "signals": [ { "source": "slack", "account": "e1" }, { "source": "slack", "account": "e2" }, { "source": "slack", "account": "e3" } ] },
+      { "theme_id": "solo-pain", "title": "One big account's niche ask", "severity": 4, "signals": [ { "source": "slack", "account": "solo" } ] }
+    ],
+    "expected_top": "shared-pain"
+  },
+  {
+    "id": "case-07",
+    "name": "High-severity crash from paying support beats a low-severity enterprise nice-to-have",
+    "accounts": [
+      { "account_id": "big", "annual_revenue": 1000000, "tier": "enterprise" },
+      { "account_id": "pay", "annual_revenue": 200000, "tier": "growth" }
+    ],
+    "themes": [
+      { "theme_id": "data-loss", "title": "Data loss on sync (sev 5)", "severity": 5, "signals_spec": { "count": 8, "source": "support_ticket", "account": "pay" } },
+      { "theme_id": "nice-to-have", "title": "Nice-to-have theming (sev 1)", "severity": 1, "signals_spec": { "count": 3, "source": "slack", "account": "big" } }
+    ],
+    "expected_top": "data-loss"
+  },
+  {
+    "id": "case-08",
+    "name": "Survey feedback from a paying account beats anonymous reviews",
+    "accounts": [{ "account_id": "cust", "annual_revenue": 150000, "tier": "growth" }],
+    "themes": [
+      { "theme_id": "survey-ask", "title": "Onboarding friction (survey)", "severity": 3, "signals_spec": { "count": 10, "source": "survey", "account": "cust" } },
+      { "theme_id": "review-ask", "title": "Onboarding friction (reviews)", "severity": 3, "signals_spec": { "count": 12, "source": "app_review", "account": null } }
+    ],
+    "expected_top": "survey-ask"
+  },
+  {
+    "id": "case-09",
+    "name": "Two review-only themes: higher volume wins (no revenue signal to differentiate)",
+    "accounts": [],
+    "themes": [
+      { "theme_id": "big-review", "title": "Common complaint", "severity": 3, "signals_spec": { "count": 30, "source": "app_review", "account": null } },
+      { "theme_id": "small-review", "title": "Rare complaint", "severity": 3, "signals_spec": { "count": 5, "source": "app_review", "account": null } }
+    ],
+    "expected_top": "big-review"
+  },
+  {
+    "id": "case-10",
+    "name": "Enterprise revenue beats moderately higher volume from growth-tier",
+    "accounts": [
+      { "account_id": "ent", "annual_revenue": 1400000, "tier": "enterprise" },
+      { "account_id": "g1", "annual_revenue": 80000, "tier": "growth" },
+      { "account_id": "g2", "annual_revenue": 70000, "tier": "growth" }
+    ],
+    "themes": [
+      { "theme_id": "ent-block", "title": "Enterprise renewal blocker", "severity": 4, "signals_spec": { "count": 4, "source": "slack", "account": "ent" } },
+      { "theme_id": "growth-ask", "title": "Growth-tier feature ask", "severity": 4, "signals": [ { "source": "support_ticket", "account": "g1" }, { "source": "support_ticket", "account": "g1" }, { "source": "support_ticket", "account": "g1" }, { "source": "support_ticket", "account": "g2" }, { "source": "support_ticket", "account": "g2" }, { "source": "support_ticket", "account": "g2" }, { "source": "support_ticket", "account": "g2" }, { "source": "support_ticket", "account": "g2" } ] }
+    ],
+    "expected_top": "ent-block"
+  },
+  {
+    "id": "case-11",
+    "name": "Sales-call renewal risk outranks a big anonymous review pile",
+    "accounts": [{ "account_id": "ent", "annual_revenue": 950000, "tier": "enterprise" }],
+    "themes": [
+      { "theme_id": "renewal", "title": "Renewal at risk (sales)", "severity": 4, "signals_spec": { "count": 4, "source": "sales_call", "account": "ent" } },
+      { "theme_id": "reviews", "title": "General app-store gripes", "severity": 3, "signals_spec": { "count": 35, "source": "app_review", "account": null } }
+    ],
+    "expected_top": "renewal"
+  },
+  {
+    "id": "case-12",
+    "name": "ADVERSARIAL: widespread login bug vs a whale's cosmetic ask",
+    "note": "Stress test. A sev-4 login failure hitting 50 users should beat a $1.6M account's sev-2 branding tweak. A pure revenue-weighted scorer may wrongly pick the whale — this case exists to catch that.",
+    "accounts": [{ "account_id": "whale", "annual_revenue": 1600000, "tier": "enterprise" }],
+    "themes": [
+      { "theme_id": "login-bug", "title": "Login broken for many users (sev 4)", "severity": 4, "signals_spec": { "count": 50, "source": "app_review", "account": null } },
+      { "theme_id": "whale-cosmetic", "title": "Whale account wants a branding tweak (sev 2)", "severity": 2, "signals_spec": { "count": 2, "source": "slack", "account": "whale" } }
+    ],
+    "expected_top": "login-bug"
+  },
+  {
+    "id": "case-13",
+    "name": "Severe crash across several enterprise accounts is the clear top priority",
+    "accounts": [
+      { "account_id": "a", "annual_revenue": 600000, "tier": "enterprise" },
+      { "account_id": "b", "annual_revenue": 500000, "tier": "enterprise" }
+    ],
+    "themes": [
+      { "theme_id": "crash", "title": "Crash hitting 2 enterprise accounts", "severity": 5, "signals": [ { "source": "support_ticket", "account": "a" }, { "source": "slack", "account": "a" }, { "source": "support_ticket", "account": "b" } ] },
+      { "theme_id": "feature", "title": "Feature request", "severity": 3, "signals_spec": { "count": 20, "source": "app_review", "account": null } }
+    ],
+    "expected_top": "crash"
+  },
+  {
+    "id": "case-14",
+    "name": "ADVERSARIAL: severe data corruption (small accounts) vs enterprise integration ask",
+    "note": "Stress test. Sev-5 data corruption is a must-fix even when the affected accounts are small; a revenue-weighted scorer may favor the big-account sev-3 integration. Honest boundary case.",
+    "accounts": [
+      { "account_id": "g1", "annual_revenue": 60000, "tier": "growth" },
+      { "account_id": "g2", "annual_revenue": 55000, "tier": "growth" },
+      { "account_id": "ent", "annual_revenue": 1300000, "tier": "enterprise" }
+    ],
+    "themes": [
+      { "theme_id": "data-corruption", "title": "Data corruption on save (sev 5)", "severity": 5, "signals": [ { "source": "support_ticket", "account": "g1" }, { "source": "support_ticket", "account": "g1" }, { "source": "support_ticket", "account": "g2" }, { "source": "app_review", "account": null }, { "source": "app_review", "account": null } ] },
+      { "theme_id": "ent-integration", "title": "Enterprise integration ask (sev 3)", "severity": 3, "signals_spec": { "count": 3, "source": "slack", "account": "ent" } }
+    ],
+    "expected_top": "data-corruption"
+  },
+  {
+    "id": "case-15",
+    "name": "Highest-revenue theme wins a three-way race",
+    "accounts": [
+      { "account_id": "x", "annual_revenue": 1700000, "tier": "enterprise" },
+      { "account_id": "y", "annual_revenue": 400000, "tier": "enterprise" },
+      { "account_id": "z", "annual_revenue": 90000, "tier": "growth" }
+    ],
+    "themes": [
+      { "theme_id": "theme-x", "title": "Blocker for the whale account", "severity": 4, "signals_spec": { "count": 3, "source": "slack", "account": "x" } },
+      { "theme_id": "theme-y", "title": "Mid enterprise ask", "severity": 4, "signals_spec": { "count": 5, "source": "support_ticket", "account": "y" } },
+      { "theme_id": "theme-z", "title": "Growth-tier ask with more volume", "severity": 4, "signals_spec": { "count": 12, "source": "app_review", "account": null } }
+    ],
+    "expected_top": "theme-x"
+  }
+]
